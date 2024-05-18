@@ -15,7 +15,7 @@ class Tagihan extends Model
    protected $primaryKey = "kode_tagihan";
 
    // melindungi agar kolom tidak dapat diisi
-   protected $guard = "kode_tagihan";
+   protected $guarded = ["kode_tagihan"];
 
 //    // untuk menyembunyikan sebuah kolom
 //    protected $hidden = "kata_sandi";

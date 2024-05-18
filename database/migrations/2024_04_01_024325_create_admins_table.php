@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('admin_keuangan', function (Blueprint $table) {
-            $table->id("id_admin_keuangan");
+        Schema::create('admin', function (Blueprint $table) {
+            $table->id("id_admin");
             $table->string("nama_lengkap");
             $table->string("username");
             $table->string("email");
+            $table->enum('role',["admin_teknik", "admin_keuangan"]);
             $table->integer("no_telepon");
             $table->string("kata_sandi");
             $table->timestamps();
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('admin_keuangan');
+        Schema::dropIfExists('admin');
     }
 };
